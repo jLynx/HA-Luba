@@ -86,6 +86,7 @@ class MammotionLawnMowerEntity(
 
 
     def _get_mower_activity(self) -> LawnMowerActivity:
+        mode = "MODE_READY"
         if self.coordinator.device.raw_data.get("dev"):
             mode = device_mode(self.coordinator.device.raw_data["dev"]["sysStatus"])
 

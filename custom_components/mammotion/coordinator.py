@@ -82,7 +82,11 @@ class MammotionDataUpdateCoordinator(ActiveBluetoothDataUpdateCoordinator[None])
         self, service_info: bluetooth.BluetoothServiceInfoBleak
     ) -> None:
         """Poll the device."""
+        _LOGGER.info("HERE JOEL!")
+        print("HERE JOEL!")
         await self.device.start_sync("key", 0)
+        print(self.device.raw_data)
+        _LOGGER.info(self.device.raw_data)
 
     @callback
     def _async_handle_unavailable(
